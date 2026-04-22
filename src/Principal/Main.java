@@ -4,7 +4,7 @@ import Models.Musica;
 import Models.Podcast;
 import Models.Preferidas;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         Musica musica= new Musica();
         musica.setTitulo("Creep");
@@ -23,7 +23,7 @@ public class main {
 
         for (int i = 0; i < 5000 ; i++) {
 
-            podcast.getTotalDeReproducoes();
+            podcast.TotalDeReproducoes();
 
         }
 
