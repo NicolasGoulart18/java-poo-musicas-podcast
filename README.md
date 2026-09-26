@@ -1,99 +1,76 @@
-# 🎧 Audio System (Music & Podcast) - Java
+# Audio System — Music & Podcast
 
-Project developed with a focus on learning **Object-Oriented Programming (OOP)** using Java.
+Java study project focused on Object-Oriented Programming.
 
-This application simulates a simple audio system, including music and podcasts, with features like play count, likes, and automatic classification based on popularity.
+The application models music and podcasts, tracks plays and likes, calculates classifications, and uses those classifications to identify favorite content.
 
----
+## Features
 
-## 🚀 Features
+- Create music and podcast objects
+- Track play counts
+- Track likes
+- Calculate classifications
+- Filter content based on classification
 
-* Music and podcast creation
-* Play count tracking
-* Like system
-* Automatic classification based on performance
-* "Favorites" filter system
+## OOP Concepts Applied
 
----
+- **Encapsulation:** object state is controlled through class attributes and methods.
+- **Inheritance:** `Music` and `Podcast` reuse behavior from `Audio`.
+- **Polymorphism:** subclasses provide their own classification behavior.
+- **Abstraction:** shared audio behavior is centralized in the base class.
 
-## 🧠 OOP Concepts Applied
+## Project Structure
 
-* **Encapsulation**
-
-    * Private attributes with getters and setters
-
-* **Inheritance**
-
-    * `Music` and `Podcast` extend the `Audio` class
-
-* **Polymorphism**
-
-    * Method overriding of `getClassification()` in different classes
-
-* **Abstraction**
-
-    * Base class `Audio` centralizing shared behaviors
-
----
-
-## 🏗️ Project Structure
-
-```
+```text
 src/
 ├── Models/
 │   ├── Audio.java
 │   ├── Music.java
 │   ├── Podcast.java
 │   └── Favorites.java
-│
-├── Main/
-│   └── Main.java
+└── Main/
+    └── Main.java
 ```
 
----
+## Classification Logic
 
-## ⚙️ How to Run
+### Music
+
+- More than 2000 plays → classification 10
+- From 1000 to 2000 plays → classification 7
+- Fewer than 1000 plays → classification 5
+
+### Podcast
+
+- More than 500 likes → classification 10
+- Up to 500 likes → classification 8
+
+## Favorites Logic
+
+The `Favorites` class evaluates the classification of an audio item:
+
+- Classification 9 or higher → highlighted as a major success
+- Classification below 9 → recommended for casual listening
+
+## How to Run
 
 1. Clone the repository:
 
-```
-git clone https://github.com/your-username/java-poo-musicas-podcast.git
+```bash
+git clone https://github.com/NicolasGoulart18/java-poo-musicas-podcast.git
 ```
 
-2. Open the project in an IDE (IntelliJ, Eclipse, or VS Code)
-
+2. Open the project in IntelliJ IDEA, Eclipse, VS Code, or another Java IDE.
 3. Run the main class:
 
-```
+```text
 Main.Main
 ```
 
----
+## Learning Goal
 
-## 💡 Classification Logic
+This project was created to practice class relationships, inheritance, encapsulation, method overriding, and polymorphism in Java.
 
-### 🎵 Music
+## Author
 
-* > 2000 plays → ⭐ 10
-* 1000 to 2000 → ⭐ 7
-* < 1000 → ⭐ 5
-
-### 🎙️ Podcast
-
-* > 500 likes → ⭐ 10
-* ≤ 500 likes → ⭐ 8
-
----
-
-## ⭐ Favorites System
-
-The `Favorites` class evaluates audio classification:
-
-* Classification ≥ 9 → "Success everywhere"
-* Classification < 9 → "Good for casual listening"
-
----
-
-## 📌 Notes
-
-This project was built for educational purposes, focusing on practicing core OOP concepts in Java and tracking learning progress as a developer.
+Nicolas Goulart
